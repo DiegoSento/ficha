@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fichas Técnicas SENTO - Catálogo de Equipos Industriales</title>
+    
+    <!-- Precargar recursos críticos -->
+    <link rel="preload" href="imag/logo1.webp" as="image">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Estilos y fuentes -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- 
+    Favicon y metadatos SEO
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Catálogo de fichas técnicas de equipos SENTO - Soluciones de monitoreo y control para entornos industriales.">
+    <meta name="keywords" content="SENTO, equipos industriales, monitoreo, control, fichas técnicas, catálogo">
+    <meta name="author" content="SENTO - Electronics Scaling Hub">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Open Graph / Redes Sociales 
+    <meta property="og:title" content="Fichas Técnicas SENTO - Catálogo de Equipos Industriales">
+    <meta property="og:description" content="Catálogo de fichas técnicas de equipos SENTO - Soluciones de monitoreo y control para entornos industriales.">
+    <meta property="og:image" content="https://tudominio.com/imag/logo1.webp">
+    <meta property="og:url" content="https://tudominio.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fichas Técnicas SENTO - Catálogo de Equipos Industriales">
+    <meta name="twitter:description" content="Catálogo de fichas técnicas de equipos SENTO - Soluciones de monitoreo y control para entornos industriales.">
+    <meta name="twitter:image" content="https://tudominio.com/imag/logo1.webp">
+    
+    <!-- Schema Markup (JSON-LD) para SEO 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Fichas Técnicas SENTO",
+        "description": "Catálogo de fichas técnicas de equipos SENTO IIoT - Procesos de monitoreo y control para entornos industriales.",
+        "url": "https://tudominio.com",
+        "image": "https://tudominio.com/imag/logo1.webp",
+        "author": {
+            "@type": "Organization",
+            "name": "SENTO - Electronics Scaling Hub"
+        }
+    }
+    </script>
+-->
+</head>
+<body>
+    <!-- Elemento de transición de página -->
+    <div class="page-transition" aria-hidden="true">
+        <div class="loading-container">
+            <img src="imag/logo1.webp" alt="Logo de SENTO" width="150" height="75"
+                 onerror="this.onerror=null; this.src='placeholder.svg?height=100&width=200';">
+            <div class="loading-spinner" aria-label="Cargando..."></div>
+        </div>
+    </div>
+
+    <!-- Overlay para tarjeta seleccionada -->
+    <div class="overlay" role="dialog" aria-hidden="true"></div>
+
+    <!-- Botón de cambio de tema -->
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Cambiar tema">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Encabezado con logo -->
+        <header>
+            <div class="logo-container">
+                <div class="logo-wrapper">
+                    <img src="imag/logo1.webp" alt="Logo de SENTO" width="300" height="150"
+                         onerror="this.onerror=null; this.src='placeholder.svg?height=100&width=300';">
+                </div>
+                <h1>Catálogo de equipos SENTO IIoT</h1>
+                <p class="subtitle">Procesos de monitoreo y control para entornos industriales</p>
+            </div>
+        </header>
+        
+        <!-- Pestañas de categorías -->
+        <div id="categoryTabs" class="category-tabs">
+            <!-- Las pestañas se generan dinámicamente con JavaScript -->
+        </div>
+        
+        <!-- Lista de equipos (se llena con JavaScript) -->
+        <main id="equipmentList" class="equipment-list" role="list">
+            <!-- Las tarjetas de equipos se generan dinámicamente aquí -->
+        </main>
+        
+        <!-- Modal de imagen en pantalla completa -->
+        <div id="fullscreenModal" class="fullscreen-image" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-content">
+                <img id="modalImage" src="placeholder.svg" alt="" loading="lazy" aria-labelledby="modalTitle">
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDescription"></p>
+                </div>
+                <button id="prevImageBtn" class="carousel-btn prev-btn" aria-label="Imagen anterior">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button id="nextImageBtn" class="carousel-btn next-btn" aria-label="Imagen siguiente">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <div id="modalDots" class="carousel-dots" role="tablist"></div>
+                <button class="close-modal-btn" id="closeModalBtn" aria-label="Cerrar modal">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Pie de página -->
+        <footer>
+            <div class="footer-logo">
+                <img src="imag/logo1.webp" alt="Logo de SENTO" width="150" height="75"
+                     onerror="this.onerror=null; this.src='placeholder.svg?height=50&width=150';">
+            </div>
+            <p class="copyright">© <span id="currentYear"></span> SENTO - Electronics Scaling Hub</p>
+        </footer>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
+

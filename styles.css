@@ -1,0 +1,1178 @@
+/* Estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.8s, color 0.8s;
+}
+
+/* Variables de color más vibrantes */
+:root {
+  --primary: #1e40af; /* Azul más vibrante */
+  --primary-dark: #1e3a8a;
+  --secondary: #f97316; /* Naranja */
+  --accent: #a855f7; /* Púrpura más brillante */
+  --accent-secondary: #ec4899; /* Rosa */
+  --card-glow: rgba(59, 130, 246, 0.5); /* Brillo azul */
+  --card-glow-hover: rgba(236, 72, 153, 0.6); /* Brillo rosa */
+  --background: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --hover-shadow: rgba(0, 0, 0, 0.2);
+  --header-bg: #f1f5f9;
+  --badge-bg: #e0f2fe;
+  --badge-text: #0369a1;
+  --placeholder-bg: #ffffff;
+  --transition-speed: 0.8s;
+}
+
+/* Modo oscuro con colores más vibrantes */
+.dark {
+  --primary: #3b82f6; /* Azul más brillante */
+  --primary-dark: #1d4ed8;
+  --secondary: #f97316; /* Naranja */
+  --accent: #a855f7; /* Púrpura */
+  --accent-secondary: #ec4899; /* Rosa */
+  --card-glow: rgba(59, 130, 246, 0.5);
+  --card-glow-hover: rgba(236, 72, 153, 0.6);
+  --background: #0f172a;
+  --card-bg: #1e293b;
+  --text: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --hover-shadow: rgba(0, 0, 0, 0.4);
+  --header-bg: #1e293b;
+  --badge-bg: #0c4a6e;
+  --badge-text: #7dd3fc;
+  --placeholder-bg: #ffffff;
+}
+
+html,
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--background);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Animación de entrada más dramática - optimizada para rendimiento */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(80px) scale(0.8);
+    filter: blur(10px);
+  }
+  60% {
+    opacity: 0.8;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Animación de resplandor para las tarjetas - optimizada */
+@keyframes cardGlow {
+  0%,
+  100% {
+    box-shadow: 0 5px 15px var(--card-glow);
+  }
+  50% {
+    box-shadow: 0 5px 30px var(--card-glow-hover);
+  }
+}
+
+/* Animación para el gradiente de fondo - optimizada */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Encabezado y logo */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-wrapper img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.logo-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Efecto de brillo para el logo - optimizado */
+.logo-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine 6s infinite;
+  pointer-events: none;
+  will-change: transform;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  20% {
+    transform: translateX(100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
+
+h1 {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Botón de tema */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 10px var(--shadow);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#themeToggle:hover {
+  transform: rotate(30deg);
+  box-shadow: 0 5px 15px var(--card-glow);
+}
+
+/* Pestañas de categorías */
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+/* Corregir estilos de las pestañas de categoría */
+.category-tab {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.category-tab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.category-tab.active {
+  background: linear-gradient(135deg, var(--accent-secondary), var(--secondary));
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.category-tab i {
+  font-size: 16px;
+}
+
+/* Lista de equipos - optimizada para rendimiento */
+.equipment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* Estilo base para las tarjetas con más dinamismo - optimizado */
+.equipment-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px var(--shadow), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  overflow: hidden;
+  position: relative;
+  border: none;
+  opacity: 0;
+  transform: translateY(30px);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-fill-mode: both;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, box-shadow, filter;
+  filter: brightness(0.95) saturate(0.9);
+  min-height: 600px;
+}
+
+/* Efecto de brillo en el borde - optimizado */
+.equipment-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+}
+
+/* Aumentar el retraso entre tarjetas para una carga más escalonada */
+.equipment-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.equipment-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.equipment-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.equipment-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.equipment-card:nth-child(5) {
+  animation-delay: 1.0s;
+}
+.equipment-card:nth-child(6) {
+  animation-delay: 1.2s;
+}
+.equipment-card:nth-child(7) {
+  animation-delay: 1.4s;
+}
+.equipment-card:nth-child(8) {
+  animation-delay: 1.6s;
+}
+.equipment-card:nth-child(9) {
+  animation-delay: 1.8s;
+}
+.equipment-card:nth-child(10) {
+  animation-delay: 2.0s;
+}
+.equipment-card:nth-child(11) {
+  animation-delay: 2.2s;
+}
+.equipment-card:nth-child(12) {
+  animation-delay: 2.4s;
+}
+.equipment-card:nth-child(13) {
+  animation-delay: 2.6s;
+}
+.equipment-card:nth-child(14) {
+  animation-delay: 2.8s;
+}
+
+/* Efecto dinámico al pasar el puntero sobre las tarjetas - optimizado */
+@media (hover: hover) {
+  .equipment-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px var(--hover-shadow), 0 0 20px var(--card-glow-hover);
+    filter: brightness(1.1) saturate(1.2) contrast(1.05);
+    z-index: 10;
+  }
+
+  /* Activar el brillo del borde al hover */
+  .equipment-card:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Título de la tarjeta más llamativo */
+.card-title {
+  font-size: 18px;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  color: white;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  word-break: break-word;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge más llamativo */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, var(--accent-secondary), var(--secondary));
+  border-radius: 20px;
+  align-self: flex-start;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+/* Contenido de la tarjeta */
+.content {
+  padding: 15px; /* Reducido de 20px */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease;
+  transform: translateZ(0);
+  font-size: 0.95em; /* Reducir ligeramente el tamaño de fuente */
+}
+
+/* Carrusel de imágenes más dinámico - optimizado */
+.carousel-container {
+  position: relative;
+  height: 220px; /* Reducido de 240px */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 15px; /* Reducido de 20px */
+  background-color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) inset;
+  transition: all 0.5s ease;
+}
+
+.carousel-slide {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 2.5s cubic-bezier(0.22, 1, 0.36, 1); /* Aumentado de 1s a 2.5s */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.5s ease;
+  background-color: var(--placeholder-bg);
+  padding: 10px;
+}
+
+/* Botones de carrusel más llamativos - optimizados */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (hover: hover) {
+  .carousel-container:hover .carousel-btn {
+    opacity: 1;
+  }
+
+  .carousel-btn:hover {
+    transform: translateY(-50%) scale(1.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, var(--accent-secondary), var(--secondary));
+  }
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Dots del carrusel más llamativos - optimizados */
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid var(--primary);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dot.active {
+  background-color: var(--accent-secondary);
+  transform: scale(1.3);
+  box-shadow: 0 0 10px var(--accent-secondary);
+}
+
+.dot:hover {
+  transform: scale(1.3);
+  background-color: var(--secondary);
+}
+
+/* Especificaciones con más estilo - optimizadas */
+.specs {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 12px; /* Reducido de 10px 15px */
+  font-size: 13px; /* Reducido de 14px */
+  margin-bottom: 15px; /* Reducido de 20px */
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px; /* Reducido de 15px */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) inset;
+  transition: all 0.4s ease;
+}
+
+.specs dt {
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s ease;
+}
+
+.specs dd {
+  color: var(--text-secondary);
+  word-break: break-word;
+  transition: transform 0.3s ease;
+}
+
+/* Títulos de sección más llamativos - optimizados */
+.section-title {
+  font-size: 16px; /* Reducido de 18px */
+  margin: 15px 0 8px; /* Reducido de 20px 0 10px */
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  padding-left: 15px;
+  transition: all 0.4s ease;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--primary), var(--accent));
+  border-radius: 4px;
+  transition: all 0.4s ease;
+}
+
+/* Contenido de sección - optimizado */
+.section-content {
+  font-size: 13px; /* Reducido de 14px */
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.5; /* Reducido de 1.6 */
+  transition: all 0.4s ease;
+  padding-left: 15px;
+  border-left: 1px solid transparent;
+}
+
+/* Overlay para tarjeta seleccionada - optimizado */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* Estilos para tarjeta seleccionada - optimizados */
+.equipment-card.selected {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 85%;
+  max-width: 650px;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--card-glow-hover);
+  border: none;
+  transition: none;
+  animation: zoomInFixed 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.equipment-card.selected .card-title {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 16px 16px 0 0;
+  font-size: 18px;
+  line-height: 1.4;
+  max-width: 100%;
+  word-break: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.equipment-card.selected .content {
+  padding: 5px;
+}
+
+/* Botón para cerrar tarjeta seleccionada - optimizado */
+.close-card-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, var(--accent-secondary), var(--secondary));
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(0) rotate(-90deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.equipment-card.selected .close-card-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) rotate(0);
+}
+
+/* Modal de imagen en pantalla completa - optimizado */
+.fullscreen-image {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(30, 58, 138, 0.95));
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.fullscreen-image.active {
+  display: flex;
+  animation: fadeIn 0.5s ease;
+}
+
+.modal-content {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--card-glow-hover);
+  animation: zoomIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 8px;
+  margin: 0 auto;
+  transform: scale(0.95);
+}
+
+.modal-info {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 0 0 16px 16px;
+  max-width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: white;
+  word-break: break-word;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.modal-info p {
+  font-size: 14px;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9);
+  word-break: break-word;
+}
+
+.fullscreen-image .carousel-btn {
+  opacity: 1;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--accent-secondary), var(--secondary));
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px var(--accent-secondary);
+}
+
+.fullscreen-image .prev-btn {
+  left: -25px;
+}
+
+.fullscreen-image .next-btn {
+  right: -25px;
+}
+
+.fullscreen-image .carousel-btn:hover {
+  transform: translateY(-50%) scale(1.2);
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent);
+}
+
+.fullscreen-image .carousel-dots {
+  position: absolute;
+  bottom: -90px;
+}
+
+.fullscreen-image .dot.active {
+  background-color: var(--secondary);
+  transform: scale(1.4);
+  box-shadow: 0 0 15px var(--secondary);
+}
+
+.fullscreen-image .dot:hover {
+  transform: scale(1.4);
+  background-color: var(--accent-secondary);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: linear-gradient(135deg, var(--accent-secondary), var(--secondary));
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal-btn:hover {
+  transform: scale(1.2) rotate(90deg);
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-secondary);
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pie de página - optimizado */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--accent), var(--secondary), var(--primary), transparent);
+  border-radius: 2px;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.footer-logo img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.copyright {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  position: relative;
+}
+
+/* Mejorar la transición de la página - optimizada */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.loading-container img {
+  max-width: 150px;
+  height: auto;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+}
+
+.page-transition.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(30, 58, 138, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ajustes responsivos para la tarjeta seleccionada */
+@media (max-width: 992px) {
+  .equipment-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .equipment-card.selected {
+    width: 90%;
+    max-width: 700px;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .fullscreen-image .prev-btn {
+    left: 10px;
+  }
+
+  .fullscreen-image .next-btn {
+    right: 10px;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .equipment-list {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 0;
+    margin-bottom: 20px;
+  }
+
+  .logo-wrapper img {
+    max-width: 220px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .equipment-card.selected {
+    width: 95%;
+    max-width: none;
+    transform: translate(-50%, -50%) scale(1.05);
+    top: 50%;
+    left: 50%;
+    border-radius: 0;
+    max-height: 100vh;
+    height: 100vh;
+  }
+
+  .equipment-card.selected .card-title {
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 0;
+  }
+
+  /* Mejorar el modal de imagen en móviles */
+  .fullscreen-image .modal-content {
+    width: 100%;
+    height: 100vh;
+    max-width: none;
+    border-radius: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fullscreen-image .modal-content img {
+    max-height: 70vh;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .fullscreen-image .prev-btn {
+    left: 5px;
+  }
+
+  .fullscreen-image .next-btn {
+    right: 5px;
+  }
+
+  .modal-info {
+    bottom: 0;
+    border-radius: 0;
+    padding: 10px;
+  }
+
+  .close-modal-btn {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .equipment-card.selected {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    transform: translate(-50%, -50%) scale(1);
+    border-radius: 0;
+    top: 50%;
+    left: 50%;
+  }
+
+  .equipment-card.selected .card-title {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 0;
+  }
+
+  .close-card-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    top: 5px;
+    right: 5px;
+  }
+
+  /* Mejorar el modal de imagen en móviles pequeños */
+  .fullscreen-image .modal-content {
+    padding: 5px;
+  }
+
+  .fullscreen-image .modal-content img {
+    max-height: 60vh;
+  }
+
+  .modal-info {
+    padding: 8px;
+  }
+}
+
+/* Mejora para dispositivos táctiles */
+@media (hover: none) {
+  .carousel-btn {
+    opacity: 0.8;
+  }
+
+  .equipment-card:active {
+    transform: scale(0.98);
+  }
+
+  /* Asegurar que no haya zoom en tarjetas en dispositivos táctiles */
+  .equipment-card.selected {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Optimizaciones de rendimiento para dispositivos de gama baja */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .equipment-card {
+    opacity: 1;
+    transform: none;
+  }
+
+  .page-transition {
+    display: none;
+  }
+}
+
+/* Nueva animación para zoom sin movimiento lateral */
+@keyframes zoomInFixed {
+  from {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Mejoras de accesibilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Mejoras de enfoque para accesibilidad */
+button:focus-visible,
+.dot:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
