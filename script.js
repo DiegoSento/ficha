@@ -11,16 +11,14 @@ const equipmentGroups = [
 const equipmentData = [
   {
     marca: "SENTO",
-    modelo: "NODO TEMPERATURA Y HUMEDAD TH V2 B - A0269",
+    modelo: "NODO TEMPERATURA HUMEDAD AMBIENTAL - L B - A0269",
     operacion: "0°C a 125°C",
     Precisión: "±3 % HR / ±0,3 ℃",
     alimentacion: "Batería Alcalina AA x2 (equivalente a 80000 transmisiones)",
     comunicacion: "Lora 915MHz",
-    aplicacion: "Medición de temperatura y humedad en interiores",
-    caracteristicas:
-      "Batería de 6 meses, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+    aplicacion: "Medicion de temperatura y humedad relativa en espacios interiores, proporcionando datos para el monitoreo ambiental.",
     frecuenciaMedicion: "Cada 10 minutos",
-    rangoOperacional: "En temperaturas -4 ~ 80 °C ambiente ",
+    rangoOperacional: " -4 ~ 80 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     dimensiones: "136mm x 99mm x 85mm",
     imagenes: ["imag/th1.webp", "imag/th2.webp", "imag/th3.webp"],
@@ -29,220 +27,194 @@ const equipmentData = [
 
   {
     marca: "SENTO",
-    modelo: "NODO TEMPERATURA DE AGUA WT V2 B - A0310",
+    modelo: "NODO TEMPERATURA AGUA - L B - A0310",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "-55°C hasta 125°C",
     Precisión: "±0,5 °C Precisión de -10 °C a +85 °C",
     alimentacion: "Batería Alcalina AA x2 (equivalente a 80000 transmisiones)",
     comunicacion: "Lora 915MHz",
-    aplicacion: "Sensor de temperatura a prueba de agua",
-    caracteristicas:
-      "Batería de 6 meses, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+    aplicacion: "Sensor diseñado para medir la temperatura en agua con una carcasa impermeable que garantiza su funcionamiento en condiciones de humedad o inmersión.",
     frecuenciaMedicion: "Cada 10 minutos",
-    rangoOperacional: "En temperaturas -4 ~ 80 °C ambiente ",
+    rangoOperacional: " -4 ~ 80 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/wt1.webp", "imag/wt2.webp", "imag/wt3.webp"],
     grupo: "sensors",
   },
   {
     marca: "SENTO",
-    modelo: "SENSOR FLUJO AGUA n PULGADAS V2 A - A0576",
+    modelo: "NODO FLUJO MECANICO 1~3 PULG - L A - A0576",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Contador de Pulsos",
     Precisión: "±0,1%",
     alimentacion: "110v / 220v AC",
     comunicacion: "Lora 915MHz",
     aplicacion:
-      "Medición de flujo y consumo de agua para dimensiones de 3/4″, 1/2″, 1″, 2″ Y 3″",
-    caracteristicas:
-      "Sin batería, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+      "Cuantificación del flujo y el consumo de agua en tuberías de diámetros específicos (3/4″, 1/2″, 1″, 2″ y 3″) utilizado en aplicaciones residenciales e industriales para el monitoreo del uso del agua.",
     frecuenciaMedicion: "Cada 5 minutos",
-    rangoOperacional: "En temperaturas -4 ~ 80 °C ambiente ",
+    rangoOperacional: " -4 ~ 80 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/wf1.webp", "imag/wf2.webp", "imag/wf3.webp"],
     grupo: "environmental",
   },
   {
     marca: "SENTO",
-    modelo: "NODO FORMALDEHIDO V1 A",
+    modelo: "NODO FORMALDEHIDO - L A - A0695",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Rango de detección: 0~5 ppm",
     Precisión: "±0,01 ppm",
     alimentacion: "110v / 220v AC",
     comunicacion: "Lora 915MHz",
-    aplicacion: "Utiliza un módulo sensor de HCHO en el aire",
-    caracteristicas:
-      "Sin batería, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+    aplicacion: "Deteccion y medicion de la concentración de formaldehído en el ambiente, utilizado para monitorear la calidad del aire interior y garantizar condiciones saludables en espacios cerrados.",
     frecuenciaMedicion: "Cada 5 minutos",
-    rangoOperacional: "En temperaturas -4 ~ 80 °C ambiente ",
+    rangoOperacional: " -4 ~ 80 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/for1.webp", "imag/for2.webp", "imag/for3.webp"],
     grupo: "sensors",
   },
   {
     marca: "SENTO",
-    modelo: "CONCENTRADOR WIFI GW V2 A - A0454",
+    modelo: "CONCENTRADOR WIFI - L A - A0454",
     dimensiones: "270mm x 220mm x 53mm",
     operacion: "Recepcion de datos Lora",
     alimentacion: "110v / 220v AC",
     comunicacion: "Lora 915MHz/WIFI 2,4 GHz",
-    aplicacion: "Concentrador principal para recepción de datos",
-    caracteristicas:
-      "Batería de litio ion (6 horas), diseñado para ambientes contaminados (Clase A).",
+    aplicacion: "Dispositivo que centraliza y gestiona la recepción de datos provenientes de múltiples sensores o dispositivos, facilitando su procesamiento de tramas Lora y envio a la plataforma IoT.",
     frecuenciaMedicion: "Continuo",
-    rangoOperacional: "En temperaturas -5 ~ 60 °C ambiente ",
+    rangoOperacional: " -5 ~ 60 °C  ",
     alcanceOperacional: "Hasta 0,6km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/gw1.webp", "imag/gw2.webp", "imag/gw3.webp"],
-    grupo: "communication",
+    grupo: "communication"
   },
   {
     marca: "SENTO",
-    modelo: "NODO RS232 V2 A - A0650",
+    modelo: "NODO RS232 - L A - A0650",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Comunicacion serial protocolo RS232",
     alimentacion: "110v / 220v AC",
     comunicacion: "Lora 915MHz",
-    aplicacion: "Conexión con sensores RS232 (básculas)",
-    caracteristicas:
-      "Sin batería, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+    aplicacion: "Integrador de sensores que utilizan la interfaz RS232 para la transmisión de datos, comúnmente empleados en básculas y sistemas de pesaje, habilitando la comunicación de estos con otros dispositivos o sistemas.",
     frecuenciaMedicion: "Cada 5 minutos",
-    rangoOperacional: "En temperaturas -4 ~ 80 °C ambiente ",
+    rangoOperacional: " -4 ~ 80 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/rs1.webp", "imag/rs2.webp", "imag/rs3.webp"],
     grupo: "control",
   },
   {
     marca: "SENTO",
-    modelo: "NODO DE PULSOS V1 A - A0787",
+    modelo: "NODO PULSOS - L A - A0787",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Contador de pulsos ",
     alimentacion: "110v / 220v AC",
     comunicacion: "Lora 915MHz",
     aplicacion:
-      "Captura datos seriales que son retrasmitidos a un concentrador",
-    caracteristicas:
-      "Sin batería, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+      "Sistema que recibe datos seriales y la envía a un concentrador para su recopilación y análisis.",
     frecuenciaMedicion: "Cada 5 minutos",
-    rangoOperacional: "En temperaturas -4 ~ 80 °C ambiente ",
+    rangoOperacional: " -4 ~ 80 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/pul1.webp", "imag/pul2.webp", "imag/pul3.webp"],
     grupo: "environmental",
   },
   {
     marca: "SENTO",
-    modelo: "NODO MODBUS RS485 V1 A - A0664",
+    modelo: "NODO RS485 - L A - A0664",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Protocolo de comunicación MODBUS",
     alimentacion: "110v / 220v AC",
     comunicacion: "Lora 915MHz",
-    aplicacion: "Comunicación RS485 bidireccional Half duplex",
-    caracteristicas:
-      "Sin batería, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+    aplicacion: "Comunicación serial que permite la transmisión y recepción de datos en un solo par de cables, utilizado en aplicaciones industriales para conectar múltiples dispositivos en una red.",
     frecuenciaMedicion: "Cada 5 minutos",
-    rangoOperacional: "En temperaturas -4 ~ 80 °C ambiente ",
+    rangoOperacional: " -4 ~ 80 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/rs4851.webp", "imag/rs4852.webp", "imag/rs4853.webp"],
     grupo: "control",
   },
   {
     marca: "SENTO",
-    modelo: " Nodo Modbus TCP A - A0651",
+    modelo: " NODO MODBUS TCP - L W A - A0651",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Protocolo de comunicación Modbus/TCP",
     alimentacion: "110v / 220v AC",
     comunicacion: "Lora 915MHz",
     aplicacion:
-      "Protocolo Modbus utilizado para comunicaciones a través de redes TCP/IP",
-    caracteristicas:
-      "Sin batería, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+      "Comunicación industrial que permite la transmisión de datos entre dispositivos electrónicos, utilizado ampliamente en sistemas de automatización y control, operando sobre redes TCP/IP para facilitar la integración y comunicación.",
     frecuenciaMedicion: "Cada 5 minutos",
-    rangoOperacional: "En temperaturas -4 ~ 80 °C ambiente ",
+    rangoOperacional: " -4 ~ 80 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/tcp1.webp", "imag/tcp2.webp", "imag/tcp3.webp"],
     grupo: "control",
   },
   {
     marca: "SENTO",
-    modelo: "CO2 TEMPERATURE HUMIDITY NODE CO&TH V2 A - 0451  ",
+    modelo: "NODO CO2 TEMPERATURA HUMEDAD AMBIENTAL- L A - 0451  ",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Rango de medición de 0-2000 ppm",
     Precisión: "±50 ppm ±3% de la lectura ",
     alimentacion: "110v / 220v AC",
     comunicacion: "Lora 915MHz",
-    aplicacion: "Medición de dióxido de carbono en el ambiente",
-    caracteristicas:
-      "Sin batería, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+    aplicacion: " Monitoreo de  la concentracion de  CO₂ en interiores.",
     frecuenciaMedicion: "Cada 5 minutos",
-    rangoOperacional: "En temperaturas -4 ~ 80 °C ambiente ",
+    rangoOperacional: " -4 ~ 80 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/co2.webp", "imag/co21.webp"],
     grupo: "sensors",
   },
   {
     marca: "SENTO",
-    modelo: "Nodo Temperatura Industrial B - A0652",
+    modelo: "NODO TEMPERATURA 5~20 cm INDUSTRIAL - L B - A0652",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Medición de temperatura de -100 a 200 °C",
     Precisión: "±0.15°C ",
     alimentacion: "Batería Alcalina AA",
     comunicacion: "Lora 915MHz",
-    aplicacion: "Medicion de temperatura en entornos industriales",
-    caracteristicas:
-      "Batería de 6 meses, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+    aplicacion: "Sensor diseñado para medir la temperatura en condiciones industriales, diseñado para implementaciones en ambientes hostiles.",
     frecuenciaMedicion: "Cada 10 minutos",
-    rangoOperacional: "En temperaturas -4 ~ 80 °C ambiente ",
+    rangoOperacional: " -4 ~ 80 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/ind1.webp", "imag/ind2.webp", "imag/ind3.webp"],
     grupo: "sensors",
   },
   {
     marca: "SENTO",
-    modelo: "NODO FLUJO IFM V2 A - A0427",
+    modelo: "NODO PULSOS 24VDC - L A - A0427",
     dimensiones: "270mm x 220mm x 53mm",
     operacion: "Rango de medición 0,1-25 l/min (20 a 60 °C)",
     Precisión: "±0.02 a ±0.05 pH ",
     alimentacion: "110v / 220v AC",
     comunicacion: "Lora 915MHz",
     aplicacion:
-      "Medición precisa del caudal, del consumo y de la temperatura de los fluidos",
-    caracteristicas:
-      "Caudalímetro magneto-inductivo, sin batería, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+      "Medicion de flujo volumétrico, consumo total y temperatura en fluidos o gases. Ideal para aplicaciones de monitoreo y control.",
     frecuenciaMedicion: "Cada 5 minutos",
-    rangoOperacional: "En temperaturas -5 ~ 60 °C ambiente ",
+    rangoOperacional: " -5 ~ 60 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/ifm1.webp", "imag/ifm2.webp", "imag/ifm3.webp"],
     grupo: "environmental",
   },
   {
     marca: "SENTO",
-    modelo: "Router 4G Suramerica - A0606",
+    modelo: "ROUTER WIFI CELULAR SURAMERICA - W C A - A0606",
     dimensiones: "270mm x 220mm x 53mm",
     operacion: "Redes 4G/LTE (Cat 4), 3G, 2G",
     alimentacion: "110v / 220v AC",
     comunicacion: "WIFI 2,4 GHz",
-    aplicacion: "Router industrial para conectividad 4G",
-    caracteristicas:
-      "Sin batería, diseñado para ambientes hostiles y contaminados (Clase A).",
+    aplicacion: "Dispositivo que proporciona conectividad de red en entornos industriales mediante tecnología 4G, brindando comunicación confiable y de alta velocidad para multiples sistemas y dispositivos.",
     frecuenciaMedicion: "Continuo",
-    rangoOperacional: "En temperaturas -5 ~ 60 °C ambiente ",
+    rangoOperacional: "-5 ~ 60 °C  ",
     alcanceOperacional: "Cobertura de red celular",
     imagenes: ["imag/rou1.webp", "imag/rou2.webp", "imag/rou3.webp"],
     grupo: "communication",
   },
   {
     marca: "SENTO",
-    modelo: "NODO AGUA PH WN V2 A - A0561",
+    modelo: "NODO PH - L A - A0561",
     dimensiones: "270mm x 220mm x 53mm",
     operacion: "0-14PH",
     Precisión: "±0.02 a ±0.05 pH",
     alimentacion: "110v / 220v AC",
     comunicacion: "Lora 915MHz",
     aplicacion:
-      "Medición de PH en agua 0 ℃ – + 80 ℃, en línea y en tiempo real",
-    caracteristicas:
-      "Sin batería, transmisión inalámbrica, para ambientes contaminados (Clase A).",
+      " Monitoreo continuo de pH en agua con posibilidad de instalacion directamente en la linea de suministro.",
     frecuenciaMedicion: "Cada 15 minutos",
-    rangoOperacional: "En temperaturas -5 ~ 60 °C ambiente ",
+    rangoOperacional: " -5 ~ 60 °C  ",
     alcanceOperacional: "Hasta 0,5km en línea de vista / 50~100m con obtaculos",
     imagenes: ["imag/ph1.webp", "imag/ph2.webp", "imag/ph3.webp"],
     grupo: "sensors",
@@ -516,7 +488,7 @@ function createEquipmentCard(equipment, index) {
     </div>
     <dl class="specs">
       
-      <dt><i class="fas fa-temperature-high" aria-hidden="true"></i> Operación:</dt>
+      <dt><i class="fas fa-temperature-high" aria-hidden="true"></i> Rango de Medicion:</dt>
       <dd>${equipment.operacion}</dd>
       <dt><i class="fas fa-crosshairs" aria-hidden="true"></i> Precisión:</dt>
       <dd>${equipment.Precisión || "Valor aplicado solo a sensores"}</dd>
@@ -526,7 +498,7 @@ function createEquipmentCard(equipment, index) {
       <dd>${equipment.comunicacion}</dd>
       <dt><i class="fas fa-clock" aria-hidden="true"></i> Frecuencia de Medición:</dt>
       <dd>${equipment.frecuenciaMedicion}</dd>
-      <dt><i class="fas fa-signal-5" aria-hidden="true"></i> Rango Operacional:</dt>
+      <dt><i class="fas fa-thermometer-quarter" aria-hidden="true"></i> Rango Operacional:</dt>
       <dd>${equipment.rangoOperacional}</dd>
       <dt><i class="fas fa-broadcast-tower" aria-hidden="true"></i> Alcance Operacional:</dt>
       <dd>${equipment.alcanceOperacional}</dd>
@@ -536,8 +508,6 @@ function createEquipmentCard(equipment, index) {
     <h3 class="section-title"><i class="fas fa-cogs" aria-hidden="true"></i> Aplicación</h3>
     <p class="section-content">${equipment.aplicacion}</p>
 
-    <h3 class="section-title"><i class="fas fa-list-ul" aria-hidden="true"></i> Características</h3>
-    <p class="section-content">${equipment.caracteristicas}</p>
   </div>
   <button class="close-card-btn" aria-label="Cerrar tarjeta">
     <i class="fas fa-times"></i>
