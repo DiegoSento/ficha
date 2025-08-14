@@ -25,6 +25,7 @@ const equipmentData = [
     grupo: "sensors",
   },
 
+  
   {
     marca: "SENTO",
     modelo: "NODO TEMPERATURA AGUA - LORA BATERIA - A0310",
