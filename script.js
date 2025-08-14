@@ -11,7 +11,7 @@ const equipmentGroups = [
 const equipmentData = [
   {
     marca: "SENTO",
-    modelo: "NODO TEMPERATURA HUMEDAD AMBIENTAL - L B - A0269",
+    modelo: "NODO TEMPERATURA HUMEDAD AMBIENTAL - LORA BATERIA - A0269",
     operacion: "0°C a 125°C",
     Precisión: "±3 % HR / ±0,3 ℃",
     alimentacion: "Batería Alcalina AA x2 (equivalente a 80000 transmisiones)",
@@ -27,7 +27,7 @@ const equipmentData = [
 
   {
     marca: "SENTO",
-    modelo: "NODO TEMPERATURA AGUA - L B - A0310",
+    modelo: "NODO TEMPERATURA AGUA - LORA BATERIA - A0310",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "-55°C hasta 125°C",
     Precisión: "±0,5 °C Precisión de -10 °C a +85 °C",
@@ -42,7 +42,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "NODO FLUJO MECANICO 1~3 PULG - L A - A0576",
+    modelo: "NODO FLUJO MECANICO 1~3 PULG - LORA ALIMENTADO - A0576",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Contador de Pulsos",
     Precisión: "±0,1%",
@@ -58,7 +58,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "NODO FORMALDEHIDO - L A - A0695",
+    modelo: "NODO FORMALDEHIDO - LORA ALIMENTADO - A0695",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Rango de detección: 0~5 ppm",
     Precisión: "±0,01 ppm",
@@ -73,7 +73,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "CONCENTRADOR WIFI - L A - A0454",
+    modelo: "CONCENTRADOR WIFI - LORA ALIMENTADO - A0454",
     dimensiones: "270mm x 220mm x 53mm",
     operacion: "Recepcion de datos Lora",
     alimentacion: "110v / 220v AC",
@@ -87,7 +87,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "NODO RS232 - L A - A0650",
+    modelo: "NODO RS232 - LORA ALIMENTADO - A0650",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Comunicacion serial protocolo RS232",
     alimentacion: "110v / 220v AC",
@@ -101,7 +101,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "NODO PULSOS - L A - A0787",
+    modelo: "NODO PULSOS - LORA ALIMENTADO - A0787",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Contador de pulsos ",
     alimentacion: "110v / 220v AC",
@@ -116,7 +116,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "NODO RS485 - L A - A0664",
+    modelo: "NODO RS485 - LORA ALIMENTADO - A0664",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Protocolo de comunicación MODBUS",
     alimentacion: "110v / 220v AC",
@@ -130,7 +130,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: " NODO MODBUS TCP - L W A - A0651",
+    modelo: " NODO MODBUS TCP - LORA WIFI ALIMENTADO - A0651",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Protocolo de comunicación Modbus/TCP",
     alimentacion: "110v / 220v AC",
@@ -145,7 +145,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "NODO CO2 TEMPERATURA HUMEDAD AMBIENTAL- L A - 0451  ",
+    modelo: "NODO CO2 TEMPERATURA HUMEDAD AMBIENTAL- LORA ALIMENTADO - 0451  ",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Rango de medición de 0-2000 ppm",
     Precisión: "±50 ppm ±3% de la lectura ",
@@ -160,7 +160,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "NODO TEMPERATURA 5~20 cm INDUSTRIAL - L B - A0652",
+    modelo: "NODO TEMPERATURA 5~20 cm INDUSTRIAL - LORA BATERIA - A0652",
     dimensiones: "136mm x 99mm x 85mm",
     operacion: "Medición de temperatura de -100 a 200 °C",
     Precisión: "±0.15°C ",
@@ -175,7 +175,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "NODO PULSOS 24VDC - L A - A0427",
+    modelo: "NODO PULSOS 24VDC - LORA ALIMENTADO - A0427",
     dimensiones: "270mm x 220mm x 53mm",
     operacion: "Rango de medición 0,1-25 l/min (20 a 60 °C)",
     Precisión: "±0.02 a ±0.05 pH ",
@@ -191,7 +191,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "ROUTER WIFI CELULAR SURAMERICA - W C A - A0606",
+    modelo: "ROUTER WIFI CELULAR SURAMERICA -  CELULAR ALIMENTADO - A0606",
     dimensiones: "270mm x 220mm x 53mm",
     operacion: "Redes 4G/LTE (Cat 4), 3G, 2G",
     alimentacion: "110v / 220v AC",
@@ -205,7 +205,7 @@ const equipmentData = [
   },
   {
     marca: "SENTO",
-    modelo: "NODO PH - L A - A0561",
+    modelo: "NODO PH - LORA ALIMENTADO - A0561",
     dimensiones: "270mm x 220mm x 53mm",
     operacion: "0-14PH",
     Precisión: "±0.02 a ±0.05 pH",
